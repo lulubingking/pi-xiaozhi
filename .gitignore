@@ -1,0 +1,24 @@
+# Runtime and personal data
+**/.env
+**/.env.*
+!**/.env.example
+**/*.db
+**/*.db-wal
+**/*.db-shm
+**/data/uploads/
+**/uploads/
+**/.runtime/
+**/*.log
+**/node_modules/
+**/.backend-venv/
+**/.venv/
+**/__pycache__/
+**/*.pyc
+**/.pytest_cache/
+**/dist/
+**/models/
+~$*
+
+# The built UI in the deployment bundle is intentional.
+!部署版code/批小智/frontend-dist/
+!部署版code/批小智/frontend-dist/**
