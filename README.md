@@ -1,6 +1,6 @@
 # 批小智 AI 自动批改作业 WebApp｜交付版
 
-这是依据当前批小智项目源码整理的独立交付目录。结构参照 `E:\AI共创面诊分析系统` 的案例资源组织方式，内容按批小智的任务书、PRD、UI/UX、技术文档和实际代码编写。面诊项目的数据库、图片、模型接口与部署命令未复制进本项目。
+这是批小智项目的正式交付目录。结构参照 `E:\AI共创面诊分析系统` 的案例资源组织方式，内容按批小智的任务书、PRD、UI/UX、技术文档和实际代码编写。面诊项目的数据库、图片、模型接口与部署命令未复制进本项目。
 
 | 目录 | 内容 |
 | --- | --- |
@@ -11,9 +11,18 @@
 | `05.RAG语料` | 18 项主题语料、助手提示词与索引说明 |
 | `部署版code/批小智` | 已构建前端、FastAPI 后端、迁移和 Windows 本地启动入口 |
 
-## 快速使用
+## 从 GitHub 克隆并运行
 
-在 Windows 上进入 `部署版code/批小智`，先运行 `./setup.ps1` 安装后端依赖，再运行 `./start.ps1`。浏览器访问 `http://127.0.0.1:8000/`，首次使用请注册教师账号。详细要求、OCR 环境和已知限制见 [部署说明](部署版code/批小智/README_prod.md)。
+当前仓库是私有仓库，需要仓库所有者邀请访问者；未获授权的人无法浏览或克隆。Windows 目标机器需安装 Git、Python 3.12 或 3.13，并能联网安装 Python 依赖。在 PowerShell 中运行：
+
+```powershell
+git clone https://github.com/lulubingking/pi-xiaozhi.git
+cd pi-xiaozhi/部署版code/批小智
+./setup.ps1
+./start.ps1
+```
+
+打开 `http://127.0.0.1:8000/`，首次使用注册教师账号。另开 PowerShell，在同一目录运行 `./check.ps1` 检查网页、数据库和 API。上述命令只启动单机 WebApp；真实 OCR、PDF 和主观题批改还需按[部署说明](部署版code/批小智/README_prod.md)配置。若 PowerShell 拒绝执行脚本，可在当前终端使用 `Set-ExecutionPolicy -Scope Process Bypass` 后重试。
 
 继续开发请使用 [源码说明](01.code/批小智/README_dev.md)。案例资源的阅读顺序和参考来源见 [交付核对](交付核对.md)。
 
